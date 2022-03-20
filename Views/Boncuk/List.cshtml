@@ -1,0 +1,28 @@
+﻿@model List<Boncuk>
+@{
+    ViewBag.Title = "List";
+
+}
+<h3>List</h3>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var boncuk in @Model)
+        {
+            <tr>
+                <td>@boncuk.Name</td>
+                <td>@boncuk.Price.ToString("C")</td>
+                <td>
+                    <a asp-controller="Boncuk" asp-action="Detail" asp-route-id="@boncuk.Slug">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">Home</a>
