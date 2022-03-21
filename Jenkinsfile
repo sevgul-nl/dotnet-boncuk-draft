@@ -16,9 +16,9 @@ pipeline {
     //}
     stage('Initialize') {
       steps {
-        sh 'export DOTNET_ROOT=/home/pi/dotnet'
-        sh 'export PATH=$PATH:/home/pi/dotnet'
-        sh 'dotnet --info'
+        sh 'sudo export DOTNET_ROOT=/home/pi/dotnet'
+        sh 'sudo export PATH=$PATH:/home/pi/dotnet'
+        sh 'sudo dotnet --info'
       }
     }
     stage('Restore packages') {
