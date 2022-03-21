@@ -1,10 +1,7 @@
 pipeline {
     agent any
-
-    environment {
-        maven = 'pi-DOTNET 3.1.417'
-        DOTNET_ROOT = '/home/pi/dotnet'
-        PATH = '/home/pi/dotnet/:$PATH'
+    tools {
+      maven = 'pi-DOTNET 3.1.417'
     }
 
   // triggers {
