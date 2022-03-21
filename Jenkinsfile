@@ -40,7 +40,7 @@ pipeline {
     }
     stage('Test: Unit Test') {
       steps {
-        sh 'echo "implement Test: Unit Test"'
+        sh 'echo "implement Test: Unit Test.."'
       //sh "dotnet test UnitTest_eBoncuk.csproj"
       }
     }
