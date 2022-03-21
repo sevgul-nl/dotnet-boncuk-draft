@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-      maven  'pi-DOTNET 3.1.417'
+      dotnet  'pi-DOTNET 3.1.417'
     }
 
   // triggers {
