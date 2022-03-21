@@ -8,12 +8,12 @@ pipeline{
    // triggers {
    //     pollSCM 'H * * * *'
     //}
-    stages{
- stage('Checkout') {
-    steps {
-     git credentialsId: "sevgul-nl", url: "https://github.com/sevgul-nl/Spring-Hibernate-Shopping-Draft.git/", branch: "master"
-    }
- }
+stages{
+ //stage('Checkout') {
+ //   steps {
+ //    git credentialsId: "sevgul-nl", url: "https://github.com/sevgul-nl/Spring-Hibernate-Shopping-Draft.git/", branch: "master"
+ //   }
+ //}
  stage('Restore packages'){
    steps{
       sh "dotnet restore eBoncuk.csproj"
