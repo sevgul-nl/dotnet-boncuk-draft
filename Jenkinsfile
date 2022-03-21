@@ -1,13 +1,12 @@
 pipeline {
     agent any
-    tools {
-      dotnet  'pi-DOTNET 3.1.417'
-    }
-
+    environment {
+        dotnet = 'pi-DOTNET 3.1.417'
+        }
   // triggers {
   //     pollSCM 'H * * * *'
   //}
-  stages {
+    stages {
     //stage('Checkout') {
     //   steps {
     //    git credentialsId: "sevgul-nl", url: "https://github.com/sevgul-nl/Spring-Hibernate-Shopping-Draft.git/", branch: "master"
