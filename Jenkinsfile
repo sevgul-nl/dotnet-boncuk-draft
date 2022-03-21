@@ -52,8 +52,21 @@ pipeline {
       }
     }
     stage('Publish') {
+      environment {   registryCredential = 'dockerhub'  }
       steps {
         sh 'dotnet publish eBoncuk.csproj '
+        script {
+            //sh 'docker stop $(docker ps -aqf "name=sevgulnl/snl-vue") && docker container prune -f -v $(docker ps -aqf "name=sevgulnl/snl-vue")'
+            //sh 'docker image prune -f -v $(docker ps -aqf "name=sevgulnl/snl-vue")'
+
+            def appimage = docker.build registry + ":$BUILD_NUMBER"
+            docker.withRegistry( '', registryCredential ) {
+            appimage.push()
+            appimage.push('latest')
+            }
+          sh 'docker container rm msBoncuk --force'
+          sh 'docker run -dp 8083:8080   --name msBoncuk sevgulnl/dotnet-eboncuk-draft'
+        }
       }
     }
     //post{
