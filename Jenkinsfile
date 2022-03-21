@@ -14,8 +14,6 @@ pipeline {
     //}
     stage('Initialize') {
       steps {
-        sh 'printenv DOTNET_ROOT'
-        sh 'printenv PATH'
         sh 'dotnet --info'
       }
     }
