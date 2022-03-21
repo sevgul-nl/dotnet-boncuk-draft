@@ -65,7 +65,7 @@ pipeline {
             appimage.push('latest')
             }
           sh 'docker container rm msBoncuk --force'
-          sh 'docker run -dp 8083:8080   --name msBoncuk sevgulnl/dotnet-eboncuk-draft'
+          sh 'docker run -dp 8083:80   --name msBoncuk sevgulnl/dotnet-eboncuk-draft'
         }
       }
     }
