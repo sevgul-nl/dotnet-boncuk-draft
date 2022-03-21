@@ -19,6 +19,12 @@ pipeline {
         sh 'dotnet restore eBoncuk.csproj'
       }
     }
+    stage('Initialize') {
+      steps {
+        sh 'export DOTNET_ROOT=$HOME/dotnet'
+        sh 'export PATH=$PATH:$HOME/dotnet'
+      }
+    }
     stage('Clean') {
       steps {
         sh 'dotnet clean eBoncuk.csproj'
