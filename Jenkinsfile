@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        dotnet = 'pi-DOTNET 3.1.417'
+        dotnet = 'home/pi/dotnet'
         }
   // triggers {
   //     pollSCM 'H * * * *'
