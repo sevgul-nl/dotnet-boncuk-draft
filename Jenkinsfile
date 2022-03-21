@@ -3,6 +3,8 @@ pipeline {
 
     environment {
         maven = 'pi-DOTNET 3.1.417'
+        DOTNET_ROOT = '/home/pi/dotnet'
+        PATH = '$PATH:/home/pi/dotnet'
     }
 
   // triggers {
@@ -16,8 +18,6 @@ pipeline {
     //}
     stage('Initialize') {
       steps {
-        sh 'export DOTNET_ROOT=/home/pi/dotnet'
-        sh 'export PATH=$PATH:/home/pi/dotnet'
         sh 'dotnet --info'
       }
     }
