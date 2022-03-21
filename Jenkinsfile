@@ -40,14 +40,14 @@ pipeline {
     }
     stage('Test: Unit Test') {
       steps {
-        sh 'implement Test: Unit Test'
+        sh 'echo "implement Test: Unit Test"'
       //sh "dotnet test UnitTest_eBoncuk.csproj"
       }
     }
 
     stage('Test: Integration Test') {
       steps {
-        sh 'implement Test: Integration Test'
+        sh 'echo "implement Test: Integration Test"'
       //sh "dotnet test ProjectPath\\IntegrateTest_eBoncuk.csproj"
       }
     }
