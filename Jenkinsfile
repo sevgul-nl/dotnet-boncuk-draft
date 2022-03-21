@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        dotnet 'pi-DOTNET 3.1.417'
+        dotnetsdk 'pi-DOTNET 3.1.417'
     }
 
     environment {
