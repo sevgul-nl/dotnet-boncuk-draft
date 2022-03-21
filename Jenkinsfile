@@ -1,11 +1,17 @@
 pipeline {
     agent any
+    tools {
+        dotnet 'pi-DOTNET 3.1.417'
+    }
+
     environment {
-        dotnet = 'home/pi/dotnet'
-        }
-  // triggers {
-  //     pollSCM 'H * * * *'
-  //}
+        registry = 'sevgulnl/dotnet-eboncuk-draft'
+        HOME = '.'
+        JENKINS_USER = 'pi'
+    }
+    // triggers {
+    //     pollSCM 'H * * * *'
+    //}
     stages {
     //stage('Checkout') {
     //   steps {
@@ -50,12 +56,12 @@ pipeline {
         sh 'dotnet publish eBoncuk.csproj '
       }
     }
-  //post{
-  //  always{
-  //    emailext body: "${currentBuild.currentResult}: Job   ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
-  //    recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-  //    subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
-  //   }
-  //  }
-  }
+    //post{
+    //  always{
+    //    emailext body: "${currentBuild.currentResult}: Job   ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+    //    recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+    //    subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+    //   }
+    //  }
+    }
 }
