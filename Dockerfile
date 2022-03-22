@@ -4,8 +4,8 @@
 #COPY bin/Release/netcoreapp3.1/ eBoncuk/
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1.417-bullseye-arm32v7
-RUN mkdir -p ./eBoncuk
-#WORKDIR /eBoncuk
+RUN mkdir -p /eBoncuk
+WORKDIR /eBoncuk
 #COPY --from=build /eBoncuk ./
-COPY bin/Release/netcoreapp3.1 ./eBoncuk
+COPY bin/Release/netcoreapp3.1 /eBoncuk
 ENTRYPOINT ["dotnet", "run"]
