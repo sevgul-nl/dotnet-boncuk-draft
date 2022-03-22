@@ -6,5 +6,5 @@
 FROM mcr.microsoft.com/dotnet/sdk:3.1.417-bullseye-arm32v7
 #WORKDIR /eBoncuk
 #COPY --from=build /eBoncuk ./
-COPY bin/Release/netcoreapp3.1/ ./
+COPY bin/Release/netcoreapp3.1 ./
 ENTRYPOINT ["eBoncuk"]
