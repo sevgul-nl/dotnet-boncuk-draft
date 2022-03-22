@@ -13,6 +13,16 @@ namespace eBoncuk
         public void Configure(IApplicationBuilder app)
         {
             app.UseDeveloperExceptionPage();
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+            //else
+            //{
+            //    app.UseExceptionHandler("/Error");
+            //    app.UseHsts();
+            //}
+ 
             app.UseStaticFiles();
             app.UseRouting();
             app.UseEndpoints(endpoints =>

@@ -25,7 +25,7 @@ pipeline {
     }
     stage('Restore packages') {
       steps {
-        sh 'dotnet restore eBoncuk.csproj'
+        sh 'dotnet restore -r linux-arm eBoncuk.csproj'
       }
     }
     stage('Clean') {
@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'dotnet build eBoncuk.csproj --configuration Release'
+        sh 'dotnet build eBoncuk.csproj --configuration Release -r linux-arm --self-contained false --no-restore'
       }
     }
     stage('Test: Unit Test') {
