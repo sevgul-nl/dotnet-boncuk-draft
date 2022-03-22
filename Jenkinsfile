@@ -65,7 +65,7 @@ pipeline {
             appimage.push('latest')
             }
           sh 'docker container rm eBoncuk --force'
-          sh 'docker run -dp 5000:5000   --name eBoncuk sevgulnl/dotnet-eboncuk-draft'
+          sh 'docker run -dp 5000:83   --name eBoncuk sevgulnl/dotnet-eboncuk-draft'
         }
       }
     }
