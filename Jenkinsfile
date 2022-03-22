@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'dotnet build eBoncuk.csproj --configuration Release -r linux-arm --self-contained false --no-restore'
+        sh 'dotnet build eBoncuk.csproj --configuration Release -r linux-arm'
       }
     }
     stage('Test: Unit Test') {
