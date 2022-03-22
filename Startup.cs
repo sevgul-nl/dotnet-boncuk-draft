@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using  Microsoft.AspNetCore.Http;
 
 namespace eBoncuk
 {
@@ -23,6 +24,7 @@ namespace eBoncuk
             //    app.UseHsts();
             //}
  
+            app.UsePathBase(new PathString("/eboncuk"));
             app.UseStaticFiles();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
