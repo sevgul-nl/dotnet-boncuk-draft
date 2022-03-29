@@ -24,6 +24,7 @@ namespace eBoncuk
             //    app.UseHsts();
             //}
  
+            //application prefix
             app.UsePathBase(new PathString("/eboncuk"));
             app.UseStaticFiles();
             app.UseRouting();

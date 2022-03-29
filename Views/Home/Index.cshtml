@@ -1,18 +1,42 @@
 ﻿@{
     ViewBag.Title = "Boncuk";
 }
-<h3>Home page</h3>
-<div class="list-group">
+<div class="wrapper">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" asp-controller="Boncuk" asp-action="Detail" asp-route-id="Boncuk-1">
+                        View Boncuk-1
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Boncuk" asp-action="List">
+                        View Boncuks
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="About">
+                        About Us
+                    </a>
+                </li>
+            </ul>
+    </nav>
+    <div class="content">
 
-    <a asp-controller="Boncuk" asp-action="Detail" asp-route-id="Boncuk-1">
-        View Boncuk-1
-    </a>
+    </div>
+    <div class="footer">
+        <!-- Copyright -->
+        <footer class="page-footer font-small blue">
 
-    <a asp-controller="Boncuk" asp-action="List">
-        View Boncuks
-    </a>
+            <a href="http://sevgul.nl">sevgul.nl by Bakis 2022</a>
 
-    <a asp-controller="Home" asp-action="About">
-        About Us
-    </a>
+        </footer>
+        <!-- Copyright -->
+    </div>
 </div>
